@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/bimiriya/AlmondHangul/tree/master)
 ### Disclaimer
 __✓__ Almond Hangul es una librería para transformar texto  en caracteres coreanos
+
 `✖` __No__ es una herramienta de traducción, solo de transcripción para palabras de fonética española
 
 

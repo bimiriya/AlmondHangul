@@ -1,0 +1,37 @@
+.bg {
+    background: #ececec;
+}
+
+.h-c {
+    height: 40vh;
+}
+
+.big-txt {
+    font-size: 3rem;
+}
+
+.huge-txt {
+    font-size: 8rem;
+}
+
+.input {
+    outline: none;
+    border-color: transparent!important;
+    box-shadow: none!important;
+}
+
+.chunk {
+    font-family: 'Black Han Sans', sans-serif;
+}
+
+.handwritten {
+    font-family: 'Nanum Pen Script'
+}
+
+.ink {
+    font-family: 'Black And White Picture', sans-serif;
+}
+
+.traditional {
+    font-family: 'Song Myung', serif;
+}

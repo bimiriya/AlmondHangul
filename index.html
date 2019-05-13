@@ -5,14 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Almond Hangul</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Black+And+White+Picture|Black+Han+Sans|Nanum+Pen+Script|Song+Myung" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
-<body>
-    <input type="text" id="AlmondText">
-    <h1 id="AlmondHangul"></h1>
+<body class="bg text-center">
+    <div class="d-flex h-c justify-content-center align-items-end mb-3">
+        <div>
+            <input type="text" autofocus class="form-control big-txt text-center input rounded-lg" id="AlmondText">
+        </div>
+    </div>
+    <small class="text-muted">
+        escoge el tipo de fuente
+    </small>
+    <div class="d-flex justify-content-center" data-bind="foreach: fonts">
+        <button class="btn mr-3" data-bind="click: function(data) {$root.font($data.name)}, class: color, css: {'active': $root.font() == name}, text: name"></button>
+    </div>
+    <div class="mt-4 p-4">
+        <h1 id="AlmondHangul" data-bind="css: font" class="huge-txt"></h1>
+        <!-- <h1 id="AlmondHangul" class="chunk huge-txt"></h1> -->
+        <!-- <h1 id="AlmondHangul" class="traditional huge-txt"></h1> -->
+        <!-- <h1 id="AlmondHangul" class="ink huge-txt"></h1> -->
+        
+    </div>
     
 
-    <script src="Hangul.js"></script>
-    <script src="almondhangul.js"></script>
+    <script src="static/js/Hangul.js"></script>
+    <script src="static/js/almondhangul.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="static/js/ko.js"></script>
+    <script>
+    function AlmondHangulModel() {
+        var self = this;
+        self.fonts = [
+            {name: 'ink', color: 'btn-outline-dark'},
+            {name: 'traditional', color: 'btn-outline-warning'},
+            {name: 'normal', color: 'btn-outline-info'},
+            {name: 'chunk', color: 'btn-outline-danger'},
+            {name: 'handwritten', color: 'btn-outline-success'}
+        ]
+        self.font = ko.observable('normal')
+    }
+    var almond = new AlmondHangulModel()
+    ko.applyBindings(almond)
+    </script>
 
 </body>
 </html>
