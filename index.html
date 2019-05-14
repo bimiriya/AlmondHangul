@@ -22,19 +22,11 @@
         <button class="btn mr-3" data-bind="click: function(data) {$root.font($data.name)}, class: color, css: {'active': $root.font() == name}, text: name"></button>
     </div>
     <div class="mt-4 p-4">
-        <h1 id="AlmondHangul" data-bind="css: font" class="huge-txt"></h1>
-        <!-- <h1 id="AlmondHangul" class="chunk huge-txt"></h1> -->
-        <!-- <h1 id="AlmondHangul" class="traditional huge-txt"></h1> -->
-        <!-- <h1 id="AlmondHangul" class="ink huge-txt"></h1> -->
-        
+        <h1 id="AlmondHangul" data-bind="css: font" class="huge-txt"></h1>        
     </div>
-    
 
     <script src="static/js/Hangul.js"></script>
-    <script src="static/js/almondhangul.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="static/js/almondhangul.js"></script>    
     <script src="static/js/ko.js"></script>
     <script>
     function AlmondHangulModel() {
@@ -48,8 +40,10 @@
         ]
         self.font = ko.observable('normal')
     }
+    
     var almond = new AlmondHangulModel()
     ko.applyBindings(almond)
+
     </script>
 
 </body>
