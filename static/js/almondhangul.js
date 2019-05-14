@@ -7,10 +7,10 @@
 
     function parse() {
         let output = []
-        // let pattern = /[ñüa-zA-Z]/gi
-        let chars = this.value.toLowerCase()
-        // let chars_str = this.value.toLowerCase()
-        // let chars = chars_str.match(pattern)
+        let pattern = /[ñüa-zA-Z]/gi
+        // let chars = this.value.toLowerCase()
+        let chars_str = this.value.toLowerCase()
+        let chars = chars_str.match(pattern)
 
         
         for (var i in chars) {
